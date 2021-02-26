@@ -4,13 +4,13 @@ class PostsController < ApplicationController
   end
 
   
-
-  def create
+  def
     Post.create(content: params[:content])
-    redirect_to action :index
+    redirect_to  :index
   end
 
   def checked
+    
     post = Post.find(params[:id])
     if post.checked 
       post.update(checked: false)
